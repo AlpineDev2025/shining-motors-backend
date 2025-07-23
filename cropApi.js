@@ -10,7 +10,7 @@ const { createClient } = require('@supabase/supabase-js');
 const cors = require('cors');
 const app = express();
 app.use(cors())
-const upload = multer({ dest: '/tmp' });
+const upload = multer({ dest: 'tmp', limits: { fileSize: 100 * 1024 * 1024 } });
 
 // Set FFmpeg path for environments like Vercel
 ffmpeg.setFfmpegPath(ffmpegPath);
