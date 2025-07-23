@@ -17,7 +17,9 @@ ffmpeg.setFfmpegPath(ffmpegPath);
 const supabase = createClient("https://rzrroghnzintpxspwauf.supabase.co",
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ6cnJvZ2huemludHB4c3B3YXVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ5MDEzNjcsImV4cCI6MjA2MDQ3NzM2N30.8in2_4tU-O_uz3fgvthaSpmmteNggXMfQ4qJ-JMagoA"
 );
-
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
 app.post('/api/crop', upload.single('video'), async (req, res) => {
   const { cropX, cropY, cropWidth, cropHeight, userId } = req.body;
   const inputPath = req.file.path;
