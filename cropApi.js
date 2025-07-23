@@ -14,9 +14,9 @@ const upload = multer({ dest: '/tmp' });
 
 // Set FFmpeg path for environments like Vercel
 ffmpeg.setFfmpegPath(ffmpegPath);
-
+console.log(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
 const supabase = createClient(
-  process.env.SUPABASE_URL,
+  "https://rzrroghnzintpxspwauf.supabase.co",
   process.env.SUPABASE_KEY
 );
 app.get('/', (req, res) => {
